@@ -1,5 +1,5 @@
 {
-  "menu" : [
+  "menu": [
     {
       "id": 1,
       "title": "buttermilk pancakes",
@@ -19,14 +19,14 @@
     {
       "id": 3,
       "title": "godzilla milkshake",
-      "category":" shakes",
+      "category": "shakes",
       "price": 6.99,
       "img": "src/images/item-3.jpeg",
       "desc": "ombucha chillwave fanny pack 3 wolf moon street art photo booth before they sold out organic viral."
     },
     {
       "id": 4,
-      "title":" country delight",
+      "title": "country delight",
       "category": "breakfast",
       "price": 20.99,
       "img": "src/images/item-4.jpeg",

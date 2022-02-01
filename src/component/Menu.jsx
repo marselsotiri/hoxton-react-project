@@ -1,7 +1,7 @@
 function Menu({ menuItems }){
 return <div className='section-center'>
 {menuItems.map((Item) => {
-return <article className='menu-item'>
+return <article key={Item.id} className='menu-item'>
   <img src={Item.img} alt={Item.tile} className='photo' />
   <div className='item-info'>
     <header>
