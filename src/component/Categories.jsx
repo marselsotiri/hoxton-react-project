@@ -1,10 +1,15 @@
-function Categories() {
+function Categories({ categories, filterCategories }) {
   return <div className="btn-container">
-    <button
-      type="button"
-      className="filter-btn"
-    >All
-    </button>
+
+    {categories.map((category, index) => {
+      return <button
+        type="button"
+        className="filter-btn"
+        key={index}
+      >{category}
+      </button>
+    })}
   </div>
+
 }
 export default Categories
