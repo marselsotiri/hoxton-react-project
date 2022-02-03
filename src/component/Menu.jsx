@@ -1,14 +1,14 @@
-function Menu({ menuItems }) {
+function Menu({ menuItems, selectCategory }) {
   return <div className='section-center'>
-    {menuItems.map((Item) => {
-      return <article key={Item.id} className='menu-item'>
-        <img src={Item.img} alt={Item.tile} className='photo' />
+    {menuItems(selectCategory).map((item) => {
+      return <article key={item.id} className='menu-item'>
+        <img src={item.img} alt={item.tile} className='photo' />
         <div className='item-info'>
           <header>
-            <h4>{Item.title}</h4>
-            <h4 className='price'>${Item.price}</h4>
+            <h4>{item.title}</h4>
+            <h4 className='price'>${item.price}</h4>
           </header>
-          <p className='item-text'>{Item.desc}</p>
+          <p className='item-text'>{item.desc}</p>
         </div>
       </article>
     })}

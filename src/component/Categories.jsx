@@ -1,4 +1,4 @@
-function Categories({ categories, filterCategories }) {
+function Categories({ categories, setSelectCategory }) {
   return <div className="btn-container">
 
     {categories.map((category, index) => {
@@ -6,6 +6,7 @@ function Categories({ categories, filterCategories }) {
         type="button"
         className="filter-btn"
         key={index}
+        onClick={() => setSelectCategory(category)}
       >{category}
       </button>
     })}

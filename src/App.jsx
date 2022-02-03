@@ -3,23 +3,14 @@ import './App.css'
 import Categories from './component/Categories'
 import Header from './component/Header'
 import Menu from './component/Menu'
+import Suggests from './component/Suggests'
 
 
 
 function App() {
   const [menuItems, setMenuItems] = useState([])
-  const [categories, setCategories] = useState([])
-
-  function allTheCategories() {
-    let menuCopy = JSON.parse(JSON.stringify(menuItems))
-    const newMenu = menuCopy.map(Item => { return Item.category })
-    const allCategory = ["all", ...new Set(newMenu)]
-    setCategories(allCategory)
-  }
-
-  useEffect(() => {
-    allTheCategories()
-  }, [])
+  const [selectCategory, setSelectCategory] = useState("all")
+  const categories = ["all", ...new Set(menuItems.map(item => item.category))]
 
   useEffect(() => {
     fetch(`http://localhost:3001/menu`)
@@ -27,22 +18,30 @@ function App() {
       .then(menuFromServer => setMenuItems(menuFromServer))
   }, [])
 
-  function filterCategories(category) {
-    if (category === "all") {
-      setMenuItems(menuItems)
-      return
+
+
+  function itemsToDispaly(category) {
+    let menuItemsToDisplay = []
+
+    if (selectCategory === "all") {
+      menuItemsToDisplay = menuItems
+    } else {
+      menuItemsToDisplay = menuItems.filter(item => item.category === category)
     }
-    const newItems = menuItems.filter((item) => item.category === category)
-    setMenuItems(menuItems)
+    return menuItemsToDisplay
   }
+
 
   return <main>
     <section className="menu section">
+
+      <Suggests />
+
       <Header />
 
-      <Categories categories={categories} filterCategories={filterCategories} />
+      <Categories categories={categories} setSelectCategory={setSelectCategory} />
 
-      <Menu menuItems={menuItems} />
+      <Menu menuItems={itemsToDispaly} selectCategory={selectCategory} />
     </section>
   </main>
 

@@ -138,6 +138,48 @@ p {
 
 /*
 =============== 
+Form
+===============
+*/
+
+.suggest-form{
+  display: grid;
+  justify-content: center;
+}
+
+.form{
+  display: grid;
+  grid-template-rows: 2rem 2rem 100px;
+  justify-content: center;
+  place-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  color: #c59d5f;
+}
+
+input {
+  border: 1px solid var(--clr-gold);
+  border-radius: 20px;
+  height: 1.5rem;
+}
+
+textarea {
+  border-radius: 10px;
+  border-color: #c59d5f;
+  font-size: 1rem;
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid var(--clr-gold);
+  width: 6rem;
+  cursor: pointer;
+}
+
+/*
+=============== 
 Menu
 ===============
 */
