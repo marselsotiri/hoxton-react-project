@@ -145,6 +145,8 @@ Form
 .suggest-form{
   display: grid;
   justify-content: center;
+  place-items: center;
+  gap: 1rem;
 }
 
 .form{
@@ -176,6 +178,10 @@ button {
   border: 1px solid var(--clr-gold);
   width: 6rem;
   cursor: pointer;
+}
+
+.page-link {
+  font-weight: bold;
 }
 
 /*

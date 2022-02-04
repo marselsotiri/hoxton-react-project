@@ -35,7 +35,7 @@ function Home() {
             body: JSON.stringify(suggest)
         })
             .then(resp => resp.json())
-        // .then(newSuggest => setSuggestions([...suggestions, newSuggest]))
+            // .then(newSuggest => setSuggestions([...suggestions, newSuggest]))
     }
 
 
