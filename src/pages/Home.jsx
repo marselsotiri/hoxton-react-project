@@ -6,8 +6,6 @@ import Suggestions from "../component/Suggestions"
 
 function Home() {
     const [menuItems, setMenuItems] = useState([])
-    const [suggestions, setSuggestions] = useState([])
-
     const [selectCategory, setSelectCategory] = useState("all")
     const categories = ["all", ...new Set(menuItems.map(item => item.category))]
 
@@ -35,7 +33,6 @@ function Home() {
             body: JSON.stringify(suggest)
         })
             .then(resp => resp.json())
-            // .then(newSuggest => setSuggestions([...suggestions, newSuggest]))
     }
 
 
