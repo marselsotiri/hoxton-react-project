@@ -1,5 +1,5 @@
 // @ts-ignore
-function Suggestion({ createTweet }) {
+function Suggestion({ createSuggest }) {
     return <div className="suggest-form">
         <h3>Suggest New Product</h3>
         <form className="form"
@@ -16,7 +16,7 @@ function Suggestion({ createTweet }) {
         }
         // @ts-ignore
         e.target.reset()
-        createTweet(suggest)
+        createSuggest(suggest)
         }}
         >
             <label>

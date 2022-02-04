@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Categories from './component/Categories'
 import Header from './component/Header'
 import Menu from './component/Menu'
 import Suggestions from './component/Suggestions'
+import Suggest from './pages/Suggest'
 
 
 
@@ -20,12 +22,6 @@ function App() {
       .then(menuFromServer => setMenuItems(menuFromServer))
   }, [])
 
-  function createSuggest() {
-
-  }
-
-
-
   function itemsToDispaly(category) {
     let menuItemsToDisplay = []
 
@@ -37,14 +33,14 @@ function App() {
     return menuItemsToDisplay
   }
 
-  function createTweet(suggest) {
+  function createSuggest(suggest) {
     fetch('http://localhost:3001/suggestions', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(suggest)
     })
       .then(resp => resp.json())
-      // .then(newSuggest => setSuggestions([...suggestions, newSuggest]))
+    // .then(newSuggest => setSuggestions([...suggestions, newSuggest]))
   }
 
 
@@ -59,9 +55,18 @@ function App() {
 
       <Menu menuItems={itemsToDispaly} selectCategory={selectCategory} />
 
-      <Suggestions createTweet={createTweet}/>
+      <Suggestions createSuggest={createSuggest} />
 
     </section>
+
+    <Routes>
+
+      <Route index element={<Navigate to="/home" />} />
+      <Route path="/suggestions" element={<Suggest />} />
+
+    </Routes>
+
+
   </main>
 
 }
