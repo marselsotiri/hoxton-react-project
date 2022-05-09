@@ -31,9 +31,14 @@ Start the server
   npm run dev
 ```
 
+Start JSON server
+
+```bash
+ json-server --watch db.json --port
+```
 
 ## 🛠 Skills
-Node.js, Cors, Sqlite, Prisma, Express... 
+Html, Css, JavaScript, JSON.db, React... 
 
 ## Lessons Learned
 
