@@ -34,7 +34,7 @@ Start the server
 Start JSON server
 
 ```bash
- json-server --watch db.json --port
+ json-server --watch db.json --port 3001
 ```
 
 ## 🛠 Skills
